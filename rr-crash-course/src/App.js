@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Companies from './components/companies'
+import companiesData from './mocks/companies.json';
 import './App.css';
 
 class App extends Component {
+  state = {companiesData}
+
+  // Delete Company
+
+  delCompany = (id) => {
+    this.setState({ companiesData: [...this.state.companiesData.filter(company => company.id !== id)] });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>CaldAr: Companies App</h1>
+        <p>ID NAME ADDRESS EMAIL CUIT PHONE</p>
+        <Companies companiesData={this.state.companiesData} delCompany={this.delCompany}/>
       </div>
     );
   }
