@@ -4,6 +4,15 @@
   padding: 0;
 }
 
+header h1 {
+  background: orangered;
+  color: white;
+}
+
+header p {
+  color: orangered;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
