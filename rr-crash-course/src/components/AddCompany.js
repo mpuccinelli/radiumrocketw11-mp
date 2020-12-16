@@ -3,14 +3,12 @@ import React, { Component } from 'react'
 export class addCompany extends Component {
     state = {
         // Could not use simply "newCompany" and then call this.state.newCompany.name or else, that is why it is doubled.
-        id: Math.floor(Math.random() * 74) + 26,
         name: '',
         address: '',
         email: '',
         cuit: '',
         phone: '',
         newCompany: {
-            id: Math.floor(Math.random() * 74) + 26,
             name: '',
             address: '',
             email: '',
@@ -23,7 +21,6 @@ export class addCompany extends Component {
         this.setState({[e.target.name]:e.target.value});
         this.setState({ 
             newCompany:{
-                id: this.state.id,
                 name: this.state.name,
                 address: this.state.address,
                 email: this.state.email,
@@ -36,7 +33,6 @@ export class addCompany extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         this.props.addCompany(this.state.newCompany);
-        this.setState({ id: Math.floor(Math.random() * 74) + 26,});
         this.setState({ name: ''});
         this.setState({ address: ''});
         this.setState({ email: ''});
@@ -44,7 +40,6 @@ export class addCompany extends Component {
         this.setState({ phone: ''});
         this.setState({ 
             newCompany:{
-                id: this.state.id,
                 name: '',
                 address: '',
                 email: '',
